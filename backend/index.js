@@ -30,6 +30,10 @@ app.use(
 const productRoutes = require("./src/products/products.route");
 const orderRoutes = require("./src/orders/orders.route");
 const skinTest = require("./src/skinDetection/skinTest");
+// const sequelize = require('./src/database/db.config.js');
+const customerRoutes = require("./src/users/customer/customerRoutes");
+const vendorRoutes = require('./src/users/vendor/vendorRoutes.js');
+const authRoutes = require("./src/users/authRoutes.js");
 
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -39,6 +43,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use("/api/orders", orderRoutes);
 app.use("/api/products", productRoutes); //this is the baseurl for products
 app.use("/api/skin", skinTest); // Linking the skinTest API route
+
+app.use("/api/auth", authRoutes);
+app.use("/api", customerRoutes);
+app.use("/api", vendorRoutes); 
+
 
 
 // Sync database and start server
@@ -56,6 +65,14 @@ async function main() {
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
     });
+    // Serve the static files from the Vite "dist" folder
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+// For any other route, serve the React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+});
+
   } catch (err) {
     console.error("Failed to initialize database:", err);
   }

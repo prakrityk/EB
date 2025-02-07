@@ -1,6 +1,8 @@
 const express = require("express");
 const Product = require("./products.model");
 const router = express.Router();
+const multer = require('multer');
+
 
 // Set up multer storage
 const storage = multer.diskStorage({

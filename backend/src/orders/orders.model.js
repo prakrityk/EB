@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../database/db.config"); // Import Sequelize instance
-const Customer = require("../users/customer/customer.model"); // Assuming Customer model exists
+const Customer = require("../users/customer/customers.model"); // Assuming Customer model exists
 
 // Define the Order model
 const Order = sequelize.define(
