@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import About from '../../../components/About'
 const Footer = () => {
   return (
     <>
@@ -24,7 +25,7 @@ const Footer = () => {
         <div className='footer__col'>
             <h4>COMPANY</h4>
            <Link to="/">Home</Link>
-           <Link to="/">About Us</Link>
+           <Link to="/aboutus">About Us</Link>
            <Link to="/">Terms and Conditions</Link>
         </div>
 

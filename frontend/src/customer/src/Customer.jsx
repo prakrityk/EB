@@ -1,12 +1,13 @@
 import { Outlet } from 'react-router-dom'
-import './App.css'
+import './Customer.css'
 
-import Navbar from './components/navbar';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+
 // In index.js or App.js
 
 
-function App() {
+function Customer() {
 
   return (
     <>
@@ -19,4 +20,4 @@ function App() {
   )
 }
 
-export default App
+export default Customer

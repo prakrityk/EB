@@ -54,6 +54,7 @@ const user = mockUser;  // For logged-in state
 
         {/* Nav Icons */}
         <div className="nav__icons relative">
+
           <span>
             <Link to="/search">
               <i className="ri-search-2-line"></i>
