@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CartModel from "../pages/products/CartModel";
+import Login from "../../../components/Login";
 
 const Navbar = () => {
   
@@ -16,7 +17,7 @@ const mockUser = {
 
 
 // Replace the actual Redux state with the mock data to test
-const user = mockUser;  // For logged-in state
+const user = 0;  // For logged-in state
 // const user = null;  // For logged-out state (comment out the above line and uncomment this one)
 
  // const user = useSelector((state) => state.user);  // Assuming user state contains user info
@@ -54,7 +55,6 @@ const user = mockUser;  // For logged-in state
 
         {/* Nav Icons */}
         <div className="nav__icons relative">
-
           <span>
             <Link to="/search">
               <i className="ri-search-2-line"></i>
@@ -69,23 +69,47 @@ const user = mockUser;  // For logged-in state
             </button>
           </span>
           <span className="relative">
-            <button onClick={handleToggleDropdown} className="focus:outline-none">
-              <i className="ri-user-3-line"></i>
-            </button>
-            {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
-                {!user ? (
-                  <Link to="/login" className="block px-4 py-2 text-black hover:bg-gray-100">Login</Link>
-                ) : (
-                  <>
-                    <Link to="/profile" className="block px-4 py-2 text-black hover:bg-gray-100">View Profile</Link>
-                    <Link to="/orders" className="block px-4 py-2 text-black hover:bg-gray-100">Orders</Link>
-                    <button className="block w-full px-4 py-2 text-black text-left hover:bg-gray-100">Logout</button>
-                  </>
-                )}
-              </div>
-            )}
-          </span>
+  <button onClick={handleToggleDropdown} className="focus:outline-none">
+    <i className="ri-user-3-line"></i>
+  </button>
+  {isDropdownOpen && (
+    <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
+      {!user ? (
+        <Link 
+          to="/login" 
+          className="block px-4 py-2 text-black hover:bg-gray-100"
+          onClick={() => setIsDropdownOpen(false)} // Close dropdown when clicking
+        >
+          Login
+        </Link>
+      ) : (
+        <>
+          <Link 
+            to="/profile" 
+            className="block px-4 py-2 text-black hover:bg-gray-100"
+            onClick={() => setIsDropdownOpen(false)} // Close dropdown
+          >
+            View Profile
+          </Link>
+          <Link 
+            to="/orders" 
+            className="block px-4 py-2 text-black hover:bg-gray-100"
+            onClick={() => setIsDropdownOpen(false)} // Close dropdown
+          >
+            Orders
+          </Link>
+          <button 
+            className="block w-full px-4 py-2 text-black text-left hover:bg-gray-100"
+            onClick={() => setIsDropdownOpen(false)} // Close dropdown on logout
+          >
+            Logout
+          </button>
+        </>
+      )}
+    </div>
+  )}
+</span>
+
         </div>
       </nav>
 

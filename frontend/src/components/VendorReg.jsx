@@ -410,7 +410,7 @@ function VendorReg() {
         {/* <button
           type="submit"
           onClick={currentStep < 4 ? handleNext : handleSubmit}
-          className="bg-red-900 text-white font-bold py-2 px-4 rounded-md"
+          className="bg-rose-600 text-white font-bold py-2 px-4 rounded-md"
         >
           {currentStep < 4 ? "Next" : "Get Started"}
         </button> */}
@@ -418,7 +418,7 @@ function VendorReg() {
 <button
     type="submit"
     onClick={currentStep < 4 ? handleNext : handleSubmit}
-    className="bg-red-900 text-white font-bold py-2 px-4 rounded-md"
+    className="bg-rose-600 text-white font-bold py-2 px-4 rounded-md"
     disabled={isSubmitting}  // Disable button when submitting
   >
     {isSubmitting ? 'Submitting...' : currentStep < 4 ? 'Next' : 'Get Started'}
@@ -427,7 +427,7 @@ function VendorReg() {
 
       <div className="text-center mt-4">
         <p className="italic text-sm">
-          Do not have an account? <Link to="/register" className="text-red-900">Register</Link> here.
+          Do not have an account? <Link to="/register" className="text-rose-600">Register</Link> here.
         </p>
       </div>
     </div>

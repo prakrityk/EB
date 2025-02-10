@@ -14,20 +14,20 @@ function Registration() {
 
                         <Link
                             to="/register/customer"
-                            className="w-full mt-5 text-white bg-red-900 font-bold py-3 rounded-md text-center block"
+                            className="w-full mt-5 text-white bg-rose-600 font-bold py-3 rounded-md text-center block"
                         >
                             Register as a Customer
                         </Link>
 
                         <Link
                             to="/register/vendor"
-                            className="w-full mt-5 text-white bg-red-900 font-bold py-3 rounded-md text-center block"
+                            className="w-full mt-5 text-white bg-rose-600 font-bold py-3 rounded-md text-center block"
                         >
                             Register as a Vendor
                         </Link>
 
                         <p className='my-5 italic text-sm text-center'>
-                            Already have an account? <Link to="/login" className='text-red-900'>Log In</Link> here.
+                            Already have an account? <Link to="/login" className='text-rose-600'>Log In</Link> here.
                         </p>
                     </>
                 )}

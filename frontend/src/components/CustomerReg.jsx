@@ -50,6 +50,7 @@ function CustomerReg() {
   };
 
   return (
+    <div className="section__container">
     <section className='h-screen flex items-center justify-center'>
       <div className='max-w-sm min-width-sm border shadow bg-white mx-auto p-8'>
         <h2 className="text-2xl font-semibold pt-5">Let's get started with Ethereal Beauty!</h2>
@@ -116,17 +117,18 @@ function CustomerReg() {
           )}
           <button
             type='submit'
-            className='w-full mt-5 text-white bg-red-900 font-bold py-3 rounded-md transition transform duration-300 hover:scale-105'
+            className='w-full mt-5 text-white bg-rose-600 font-bold py-3 rounded-md transition transform duration-300 hover:scale-105'
           >
             Register
           </button>
 
           <p className='my-5 italic text-sm text-center'>
-            Already have an account? <Link to="/login" className='text-red-900'>Log In</Link> here
+            Already have an account? <Link to="/login" className='text-rose-600'>Log In</Link> here
           </p>
         </form>
       </div>
     </section>
+    </div>
   );
 }
 
